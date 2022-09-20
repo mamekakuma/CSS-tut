@@ -73,6 +73,7 @@ h1 {
 }
 .subhead {
   font-size: 1.4rem;
+  color: black;
 }
 section.hero {
   color: blue;
@@ -100,4 +101,87 @@ section.hero {
   .desc {
     line-height: 1.5rem;
   }
+}
+@media only screen and (min-width: 680px) {
+  body {
+    margin: 1.5em 5em;
+    font-family: "Popins", sans-serif;
+  }
+}
+@media only screen and (min-width: 850px) {
+  .menu {
+    display: none;
+  }
+  nav {
+    transform: translateX(0);
+    position: unset;
+    display: block;
+    width: auto;
+    height: auto;
+    background: none;
+  }
+  svg.close {
+    display: none;
+  }
+  ul {
+    display: flex;
+    margin: 0;
+    a {
+      color: white;
+      padding: 0.5em 1.5em;
+      font-size: 0.9rem;
+      &:hover {
+        background: none;
+        text-decoration: underline;
+      }
+    }
+  }
+  .hero-img {
+    left: unset;
+    right: 0;
+    width: 50%;
+    height: 43em;
+  }
+  .logo {
+    color: black;
+    span {
+      color: red;
+    }
+  }
+  .hero {
+    height: auto;
+    width: 40%;
+    margin-bottom: 8em;
+    h1 {
+      color: rgb(3, 3, 3);
+    }
+    svg.down-arrow {
+      stroke: black;
+      position: unset;
+      path {
+        fill: black;
+      }
+    }
+  }
+  .feature {
+    display: grid;
+     grid-template-columns: repeat(2, auto);
+    margin-bottom: 8em;
+    gap: 3em;
+    img {
+      width: 25em;
+    }
+//    Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.
+}
+// .feature-left{
+// //   grid-template-areas:"left right";
+// //   img{
+// //       grid-area: "left";
+// //   }
+// //   .content{
+// //     text-align: left;
+// //     width: 25em;
+// //     justify-self: left;
+// //   }
+// }
 }

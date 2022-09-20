@@ -77,6 +77,7 @@ h1 {
 
 .subhead {
   font-size: 1.4rem;
+  color: black;
 }
 
 section.hero {
@@ -105,4 +106,76 @@ section.hero .down-arrow path {
 }
 .more-info .desc {
   line-height: 1.5rem;
+}
+
+@media only screen and (min-width: 680px) {
+  body {
+    margin: 1.5em 5em;
+    font-family: "Popins", sans-serif;
+  }
+}
+@media only screen and (min-width: 850px) {
+  .menu {
+    display: none;
+  }
+  nav {
+    transform: translateX(0);
+    position: unset;
+    display: block;
+    width: auto;
+    height: auto;
+    background: none;
+  }
+  svg.close {
+    display: none;
+  }
+  ul {
+    display: flex;
+    margin: 0;
+  }
+  ul a {
+    color: white;
+    padding: 0.5em 1.5em;
+    font-size: 0.9rem;
+  }
+  ul a:hover {
+    background: none;
+    text-decoration: underline;
+  }
+  .hero-img {
+    left: unset;
+    right: 0;
+    width: 50%;
+    height: 43em;
+  }
+  .logo {
+    color: black;
+  }
+  .logo span {
+    color: red;
+  }
+  .hero {
+    height: auto;
+    width: 40%;
+    margin-bottom: 8em;
+  }
+  .hero h1 {
+    color: rgb(3, 3, 3);
+  }
+  .hero svg.down-arrow {
+    stroke: black;
+    position: unset;
+  }
+  .hero svg.down-arrow path {
+    fill: black;
+  }
+  .feature {
+    display: grid;
+    grid-template-columns: repeat(2, auto);
+    margin-bottom: 8em;
+    gap: 3em;
+  }
+  .feature img {
+    width: 25em;
+  }
 }/*# sourceMappingURL=main.css.map */
