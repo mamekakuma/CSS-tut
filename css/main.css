@@ -126,19 +126,19 @@ section.hero .down-arrow path {
     height: auto;
     background: none;
   }
-  svg.close {
+  nav svg.close {
     display: none;
   }
-  ul {
+  nav ul {
     display: flex;
     margin: 0;
   }
-  ul a {
+  nav ul a {
     color: white;
     padding: 0.5em 1.5em;
     font-size: 0.9rem;
   }
-  ul a:hover {
+  nav ul a:hover {
     background: none;
     text-decoration: underline;
   }
@@ -177,5 +177,29 @@ section.hero .down-arrow path {
   }
   .feature img {
     width: 25em;
+  }
+  .feature .content {
+    text-align: right;
+    width: 25em;
+  }
+  .feature.left {
+    grid-template-areas: "left right";
+  }
+  .feature.left img {
+    grid-area: left;
+  }
+  .feature.left .content {
+    text-align: left;
+    width: 25em;
+    justify-self: left;
+  }
+}
+@media only screen and (min-width: 1200px) {
+  .wrapper {
+    width: 1200px;
+    margin: 0 auto;
+  }
+  .feature {
+    gap: 0;
   }
 }/*# sourceMappingURL=main.css.map */
