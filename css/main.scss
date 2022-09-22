@@ -19,20 +19,26 @@ a {
   width: 100%;
   height: 100vh;
   z-index: -1;
+  animation: introLoad 2s forwards;
   // overflow: hidden;
 }
 .logo {
+  font-style:italic;
   color: white;
   font-weight: bold;
+  span{
+    color:black;
+  }
 }
 nav {
   position: fixed;
   right: 0;
   top: 0;
-  height: 100vh;
-  background: white;
+  height: 60vh;
+  background: #F5F5F5;
+  border-radius: 5px;
   text-transform: uppercase;
-  z-index: 3666;
+  z-index: 36;
   transform: translateX(100%);
   transition: transform 0.5s case-in-out;
 
@@ -56,11 +62,11 @@ nav {
     width: 2em;
   }
 }
-header {
+header{
   display: flex;
   justify-content: space-between;
   svg {
-    width: 3em;
+    width: 2.13em;
     margin-top: -1em;
     cursor: pointer;
   }
@@ -73,16 +79,19 @@ h1 {
 }
 .subhead {
   font-size: 1.4rem;
-  color: black;
+  color: white;
 }
 section.hero {
   color: blue;
   height: 90vh;
+  animation: moveDown 1s ease-in-out forwards;
+  opacity: 0;
   .down-arrow {
     stroke: white;
     position: absolute;
     bottom: 2em;
     width: 1em;
+    animation: moveArrow 1s alternate-reverse infinite;
     path {
       fill: white;
     }
@@ -109,6 +118,9 @@ section.hero {
   }
 }
 @media only screen and (min-width: 850px) {
+  .subhead {
+    color: black;
+  }
   .menu {
     display: none;
   }
@@ -119,23 +131,23 @@ section.hero {
     width: auto;
     height: auto;
     background: none;
-  
-  svg.close {
-    display: none;
-  }
-  ul {
-    display: flex;
-    margin: 0;
-    a {
-      color: white;
-      padding: 0.5em 1.5em;
-      font-size: 0.9rem;
-      &:hover {
-        background: none;
-        text-decoration: underline;
+    svg.close {
+      display: none;
+    }
+    ul {
+      display: flex;
+      margin: 0;
+      a {
+        color: white;
+        padding: 0.5em 1.5em;
+        font-size: 0.9rem;
+        &:hover {
+          background: none;
+          text-decoration: underline;
+        }
       }
     }
-  }}
+  }
   .hero-img {
     left: unset;
     right: 0;
@@ -143,6 +155,7 @@ section.hero {
     height: 43em;
   }
   .logo {
+    font-style:italic;
     color: black;
     span {
       color: red;
@@ -164,36 +177,65 @@ section.hero {
     }
   }
   .feature {
-     display: grid;
-     grid-template-columns: repeat(2,auto);
+    display: grid;
+    grid-template-columns: repeat(2, auto);
     margin-bottom: 8em;
     gap: 3em;
-    img{
+    img {
       width: 25em;
     }
-    .content{
+    .content {
       text-align: right;
       width: 25em;
     }
-}
-.feature.left{
-  grid-template-areas:"left right";
-  img{
-    grid-area: left;
   }
-  .content{
-    text-align: left;
-    width: 25em;
-    justify-self: left;
+  .feature.left {
+    grid-template-areas: "left right";
+    img {
+      grid-area: left;
+    }
+    .content {
+      text-align: left;
+      width: 25em;
+      justify-self: left;
+    }
   }
 }
+.open-nav {
+  transform: translateX(0%);
 }
-@media only screen and (min-width: 1200px){
-.wrapper{
-  width: 1200px;
-margin: 0 auto ;
+@media only screen and (min-width: 1200px) {
+  .wrapper {
+    width: 1200px;
+    margin: 0 auto;
+  }
+  .feature {
+    gap: 0;
+  }
 }
-.feature{
-  gap: 0;
+@keyframes introLoad {
+  from {
+    clip-path: polygon(0 0, 100% 0, 84% 36%, 25% 38%);
+  }
+  to {
+    clip-path: polygon(0 0, 100% 0, 100% 100%, 0 100%);
+  }
 }
+
+@keyframes moveArrow {
+  from {
+    transform: translateY(-30px);
+  }
+  to {
+    transform: translateY(0);
+  }
+}
+@keyframes moveDown {
+  from {
+    transform: translateY(-100px);
+  }
+  to {
+    transform: translateY(0);
+    opacity: 1;
+  }
 }
